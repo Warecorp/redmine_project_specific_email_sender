@@ -2,15 +2,6 @@ module RedmineProjectSpecificEmailSender
   module MailerPatch
     def self.included(base)
       base.send(:include, InstanceMethods)
-      base.class_eval do
-        alias_method_chain :mail_from, :project_specific_email
-        alias_method_chain :issue_add, :project_specific_email
-        alias_method_chain :issue_edit, :project_specific_email
-        alias_method_chain :document_added, :project_specific_email
-        alias_method_chain :attachments_added, :project_specific_email
-        alias_method_chain :news_added, :project_specific_email
-        alias_method_chain :message_posted, :project_specific_email
-      end
     end
 
     module InstanceMethods
