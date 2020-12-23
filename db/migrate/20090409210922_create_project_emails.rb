@@ -1,4 +1,4 @@
-class CreateProjectEmails < ActiveRecord::Migration
+class CreateProjectEmails < ActiveRecord::Migration[5.2]
   def self.up
     create_table :project_emails do |t|
       t.string :email
